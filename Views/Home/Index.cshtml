@@ -1,0 +1,28 @@
+﻿@model WebApplication1.Models.ListModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<html>
+<body>
+
+    <form method="post" asp-action="Index" enctype="multipart/form-data">
+        @foreach (var item in Model.TestModels)
+        {
+            <input type="checkbox" name="Problem" value="@item.Id" />@item.Name
+            <select name="RecommendedValue">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        }
+
+        <input type="submit" value="Submit" />
+    </form>
+
+   
+</body>
+</html>
